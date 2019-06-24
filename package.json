@@ -1,0 +1,41 @@
+{
+  "name": "@pefish/js-util-random",
+  "version": "0.0.1",
+  "description": "random tool of js",
+  "keywords": [
+    "common",
+    "js",
+    "tool"
+  ],
+  "homepage": "https://github.com/pefish/js-util-random",
+  "bugs": "https://github.com/pefish/js-util-random/issues",
+  "license": "MIT",
+  "author": "pefish",
+  "main": "./lib/random.js",
+  "types": "./types/random.d.ts",
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pefish/js-util-random"
+  },
+  "scripts": {
+    "build": "rm -rf types lib && tsc",
+    "test": "mocha --timeout 6000 --require ts-node/register src/random.test.ts",
+    "prepublish": "yarn build"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.7",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "@pefish/js-error": "^0.0.5",
+    "@pefish/js-node-assist": "^0.6.2",
+    "uuid": "^3.3.2"
+  }
+}
