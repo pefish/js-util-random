@@ -1,6 +1,6 @@
 {
   "name": "@pefish/js-util-random",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "random tool of js",
   "keywords": [
     "common",
@@ -34,8 +34,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "@pefish/js-error": "^0.0.5",
-    "@pefish/js-node-assist": "^0.6.2",
+    "@pefish/js-node-assist": "^0.6.9",
     "uuid": "^3.3.2"
   }
 }

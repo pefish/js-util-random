@@ -1,6 +1,5 @@
 /** @module */
 import '@pefish/js-node-assist'
-import ErrorHelper from '@pefish/js-error'
 import uuidV1 from 'uuid/v1'
 /**
  * 随机数工具类
@@ -103,6 +102,6 @@ export default class RandomUtil {
         return value
       }
     }
-    throw new ErrorHelper(`权重随机错误`)
+    throw new Error(`权重随机错误`)
   }
 }
