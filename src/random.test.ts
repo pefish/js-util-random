@@ -10,10 +10,10 @@ describe('randomUtil', () => {
         [676, 10],
         [{a: 'uui'}, 30]
       ])
-      global.logger.error(result)
+      console.error(result)
       // assert.strictEqual(tx['outputWithIndex'][0]['address'], 'moneyqMan7uh8FqdCA2BV5yZ8qVrc9ikLP')
     } catch (err) {
-      global.logger.error(err)
+      console.error(err)
       assert.throws(() => {
       }, err)
     }
@@ -22,10 +22,10 @@ describe('randomUtil', () => {
   it('getRandomString', async () => {
     try {
       const result = RandomUtil.getRandomString(10)
-      global.logger.error(result)
+      console.error(result)
       // assert.strictEqual(tx['outputWithIndex'][0]['address'], 'moneyqMan7uh8FqdCA2BV5yZ8qVrc9ikLP')
     } catch (err) {
-      global.logger.error(err)
+      console.error(err)
       assert.throws(() => {
       }, err)
     }

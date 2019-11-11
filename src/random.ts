@@ -1,5 +1,4 @@
 /** @module */
-import '@pefish/js-node-assist'
 import uuidV1 from 'uuid/v1'
 /**
  * 随机数工具类
@@ -11,7 +10,7 @@ export default class RandomUtil {
    * @param end {number} end
    * @returns {number}
    */
-  static getRandomInt (start, end) {
+  static getRandomInt (start: number, end: number): number {
     const c = end - start
     return Math.floor(Math.random() * c + start)
   }
@@ -21,7 +20,7 @@ export default class RandomUtil {
    * @param list {array} 目标列表
    * @returns {*}
    */
-  static getRandomFromList (list) {
+  static getRandomFromList (list: any[]): any {
     return list[Math.floor(Math.random() * 1E4) % list.length]
   }
 
@@ -32,7 +31,7 @@ export default class RandomUtil {
    * @param num {number} 保留几个小数点
    * @returns {string | *}
    */
-  static getRandomFloat (start, end, num) {
+  static getRandomFloat (start: number, end: number, num: number): string {
     let c = end - start
     return (Math.random() * c + start).toFixed(num)
   }
@@ -41,7 +40,7 @@ export default class RandomUtil {
    * 生成一个随机小数, 范围 [0, 1)
    * @returns {number}
    */
-  static getRandomDecimal () {
+  static getRandomDecimal (): number {
     return Math.random()
   }
 
@@ -49,7 +48,7 @@ export default class RandomUtil {
    * 生成一个唯一id(v1版本)
    * @returns {*}
    */
-  static getUniqueId () {
+  static getUniqueId (): string {
     return uuidV1()
   }
 
@@ -58,7 +57,7 @@ export default class RandomUtil {
    * @param str {string}
    * @returns {*}
    */
-  static getRandomChar (str) {
+  static getRandomChar (str: string): string {
     const index = RandomUtil.getRandomInt(0, str.length)
     return str[index]
   }
@@ -69,7 +68,7 @@ export default class RandomUtil {
    * @param chars {string} 从哪里选
    * @returns {string}
    */
-  static getRandomString (length, chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789') {
+  static getRandomString (length: number, chars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'): string {
     let result = ''
     for (let i = 0; i < length; i++) {
       result += RandomUtil.getRandomChar(chars)
@@ -77,7 +76,7 @@ export default class RandomUtil {
     return result
   }
 
-  static uniqueNonce () {
+  static uniqueNonce (): string {
     const randomBytes = require('randombytes')
     const ByteBuffer = require('bytebuffer')
     const Long = ByteBuffer.Long
@@ -89,12 +88,12 @@ export default class RandomUtil {
     return long.toString()
   }
 
-  static getRandomFromWeightArray (arr) {
+  static getRandomFromWeightArray (arr: [any, number][]): any {
     let weightSum = 0
     for (let [ _, weight ] of arr) {
       weightSum += weight
     }
-    const random = RandomUtil.getRandomInt(1, weightSum)
+    const random = RandomUtil.getRandomInt(1, weightSum + 1)
     let temp = 0
     for (let [ value, weight ] of arr) {
       temp += weight
